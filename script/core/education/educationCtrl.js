@@ -7,7 +7,7 @@ app.controller('EducationCtrl', function($scope, $routeParams) {
             name: 'Technical University of Wrocław',
             degree: "Master's degree",
             department: 'Computer Science',
-            years: '2013-2015'
+            years: '2013-now'
         },
         {
             name: 'Technical University of Wrocław',
