@@ -1,7 +1,7 @@
 app.controller('HobbyCtrl', function($scope, $routeParams){
     $scope.name = "HobbyCtrl";
     $scope.params = $routeParams;
-    $scope.schools = [
+    $scope.hobbys = [
         {
             name: 'Home beer brewing'
         },
