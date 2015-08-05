@@ -1,7 +1,115 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+﻿<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>Marcin Marczyk</title>
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+        <link rel="stylesheet" href="bower_components/roboto-fontface/css/roboto-fontface.css">
+    </head>
+    <!-- 
+        lightIndigo, 
+        darkIndigo, 
+        lightGreen, 
+        darkGreen, 
+        lightRed, 
+        darkRed, 
+        lightYellow,
+        darkYellow 
+    -->
+    <body ng-cloak > 
+        <div ng-controller="MainCtrl" md-theme="lightGreen" layout="column" id="container" >
+            <section layout="row" flex>
+
+                <!-- MENU -->
+                <md-sidenav id="menu" class="md-sidenav-left md-whiteframe-z5" 
+                    md-component-id="left"
+                    md-is-locked-open="$mdMedia('gt-lg')">
+                    <md-toolbar class="md-whiteframe-z2" md-theme-watch="true">
+                        <h1 class="md-toolbar-tools"></h1>
+                    </md-toolbar>
+                    <md-content layout-padding ng-controller="MenuCtrl">
+                        <a ng-href="#/">
+                            <img class="face" width="220px" src="img/face.jpg" alt=""/>
+                        </a>
+                        <h2 class="md-flex">Marcin Marczyk</h2>
+                        <h5 class="md-flex">Java Software Engineer</h5>
+                        <md-divider></md-divider>
+                        <md-content>
+                            <md-list>
+                                <md-list-item ng-repeat="item in menu">
+                                    <md-button ng-href="{{item.url}}"
+                                        class="md-primary" ng-click="closeMenu()" md-theme-watch="true">
+                                        {{item.label}}
+                                    </md-button>
+                                </md-list-item>
+                            </md-list>
+                        </md-content>
+                    </md-content>
+                </md-sidenav>
+
+
+                <!-- MAIN CONTENT -->
+                <md-content flex >
+                    <md-toolbar class="md-whiteframe-z2" md-theme-watch="true">
+                        <div class="md-toolbar-tools">
+                            <md-button ng-click="toggleMenu()"
+                                style="min-width: 40px; width: 40px;"
+                                aria-label="Toggle menu"
+                                hide-gt-lg>
+                                <md-icon md-svg-src="img/menu.svg"
+                                         alt="Toggle menu">
+                                </md-icon>
+                            </md-button>
+                            <h2 class="md-flex">~{{$location.$$path}}</h2>
+                        </div>
+                    </md-toolbar>
+                    <md-content layout-padding class="gridList" md-theme-watch="true">
+                        <div ng-view></div>
+                    </md-content>
+                </md-content>
+
+
+                <!-- FOOTER -->
+                <div id="footer" ng-controller="FooterCtrl" layout="row">
+                    <md-button ng-click="showGridBottomSheet($event)" class="md-fab"
+                        aria-label="Bottom sheet">
+                        more
+                    </md-button>
+                </div>
+            </section>
+        </div>
+        
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-aria/angular-aria.js"></script>
+        <script src="bower_components/angular-material/angular-material.js"></script>
+
+        <script src="script/core/mainCtrl.js"></script>
+        <script src="script/core/menuCtrl.js"></script>
+        <script src="script/core/footerCtrl.js"></script>
+        <script src="script/core/routing.js"></script>
+        <script src="script/core/themes.js"></script>
+        <script src="script/core/default/defaultCtrl.js"></script>
+        <script src="script/core/education/educationCtrl.js"></script>
+        <script src="script/core/career/careerCtrl.js"></script>
+        <script src="script/core/projects/projectsCtrl.js"></script>
+        <script src="script/core/hobby/hobbyCtrl.js"></script>
+        <script src="script/core/contact/contactCtrl.js"></script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-63812347-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
 </html>
