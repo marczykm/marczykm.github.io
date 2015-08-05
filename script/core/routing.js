@@ -31,6 +31,11 @@ app.config( function($routeProvider, $locationProvider){
             templateUrl: baseUrl+'/contact/contact.html',
             controller: 'ContactCtrl'
         })
+        .when('/amateur_projects',
+        {
+            templateUrl: baseUrl+'/amateur_projects/amateur_projects.html',
+            controller: 'AmateurProjectsCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         })
