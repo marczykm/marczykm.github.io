@@ -5,10 +5,10 @@
     </div>
   </md-toolbar>
   <md-card-content layout-padding style="padding: 24px;">
-    <md-content ng-repeat="item in hobbys">
+    <md-content ng-repeat="item in amateurProjects">
         <h2>{{item.name}}</h2>
         <h3>{{item.description}}</h3>
-        <p><a href="{{item.link}}">Link</a></p>
+        <p><a ng-href="{{item.link}}">Link</a></p>
         <md-divider ng-if="!$last"/>
     </md-content>
   </md-card-content>

@@ -1,7 +1,7 @@
 app.controller('AmateurProjectsCtrl', function($scope, $routeParams){
     $scope.name = "AmateurProjectsCtrl";
     $scope.params = $routeParams;
-    $scope.hobbys = [
+    $scope.amateurProjects = [
         {
             name: 'angular-blog',
             description: 'Blog management system using Spring Boot, Spring MVN, AngularJS, Hibernate, Twitter Bootstrap',
