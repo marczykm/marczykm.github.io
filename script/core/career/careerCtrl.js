@@ -4,6 +4,20 @@ app.controller('CareerCtrl', function($scope, $routeParams){
 
     $scope.jobs = [
         {
+            position: 'Java Developer/Designer',
+            company: 
+            {
+                name: 'eurobank', 
+                city: 'Wrocław',
+                country: 'Poland'
+            },
+            hired: 
+            {
+                from: '02.2016', 
+                to: 'now'
+            }
+        },
+        {
             position: 'Java Software Engineer',
             company: 
             {
@@ -14,7 +28,7 @@ app.controller('CareerCtrl', function($scope, $routeParams){
             hired: 
             {
                 from: '05.2014', 
-                to: 'now'
+                to: '01.2016'
             }
         },
         {
