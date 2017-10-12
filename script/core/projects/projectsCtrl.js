@@ -5,9 +5,28 @@ app.controller('ProjectsCtrl', function($scope, $routeParams){
     $scope.projects = 
     [
         {
+            name: 'Kredyt ratalny Euroraty',
+            company: 'eurobank',
+            hired: {from: '02.2016', to: 'now'},
+            description: "",
+            tools: 
+            [
+                'Java',
+                'Spring',
+                'angularJS',
+                'JSP',
+                'Hibernate',
+                'JUnit',
+                'WLS',
+                'Maven',
+                'GIT',
+                'JIRA'
+            ]
+        },
+        {
             name: 'FIS++',
             company: 'Capgemini',
-            hired: {from: '09.2014', to: 'now'},
+            hired: {from: '09.2014', to: '01.2016'},
             description: "Application for managing production process in Volkswagen's plant.",
             tools: 
             [
