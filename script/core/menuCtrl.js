@@ -16,7 +16,7 @@ app.controller('MenuCtrl',
                 url: hash_slash+'career'
             },
             {
-                label: 'Projects so far',
+                label: 'Projects',
                 url: hash_slash+'projects'
             },
             {
