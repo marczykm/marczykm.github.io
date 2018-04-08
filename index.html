@@ -1,47 +1,106 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Reveal Test</title>
-    <link rel="stylesheet" type="text/css" href="css/reveal.css">
-    <link rel="stylesheet" type="text/css" href="css/theme/black.css">
-</head>
-<body>
-    <div class="reveal">
-        <div class="slides">
-            <section>
-                <section data-background-color="gray">
-                    <h3>Slide 1</h3>
-                    <p>Lorem ipsum dolor sit amet</p>
-                </section>
-                <section>
-                    <h3>Slide 2</h3>
-                    <iframe width="900" height="500" src="https://www.youtube.com/embed/DVt8T7XCCyI"></iframe>
-                </section>
-            </section>
-            <section>
-                <p>After 2 seconds the first fragment will be shown.</p>
-                <p class="fragment">After 10 seconds the next fragment will be shown.</p>
-                <p class="fragment">Now, the fragment is displayed for 2 seconds before the next slide is shown.</p>
-            </section>
-            <section>
-                <h3>Example code</h3>
-                <pre class="fragment" style="background: white">
-                    <code data-trim data-noescape style="color: gray">
-<span style="color: orange">public class</span> Main {
-    <span style="color: orange">public static void</span> <span style="color: brown">main</span>(String[] args){
-        System.out.println(<span style="color: lightgreen">"Hello, World!"</span>);
-    }
-}
-                    </code>
-                </pre>
+﻿<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>Marcin Marczyk</title>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.0/angular-material.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    </head>
+    <!-- 
+        lightIndigo, 
+        darkIndigo, 
+        lightGreen, 
+        darkGreen, 
+        lightRed, 
+        darkRed, 
+        lightYellow,
+        darkYellow 
+    -->
+    <body ng-cloak > 
+        <div ng-controller="MainCtrl" md-theme="lightGreen" layout="column" id="container" >
+            <section layout="row" flex>
+
+                <!-- MENU -->
+                <md-sidenav id="menu" class="md-sidenav-left md-whiteframe-z5" 
+                    md-component-id="left"
+                    md-is-locked-open="$mdMedia('gt-lg')">
+                    <md-toolbar class="md-whiteframe-z2" md-theme-watch="true">
+                        <h1 class="md-toolbar-tools"></h1>
+                    </md-toolbar>
+                    <md-content layout-padding ng-controller="MenuCtrl">
+                        <a ng-href="#/">
+                            <img class="face" width="220px" src="img/face.jpg" alt=""/>
+                        </a>
+                        <h2 class="md-flex">Marcin Marczyk</h2>
+                        <h5 class="md-flex">Java Software Engineer</h5>
+                        <md-divider></md-divider>
+                        <md-content>
+                            <md-list>
+                                <md-list-item ng-repeat="item in menu">
+                                    <md-button ng-href="{{item.url}}"
+                                        class="md-primary" ng-click="closeMenu()" md-theme-watch="true">
+                                        {{item.label}}
+                                    </md-button>
+                                </md-list-item>
+                            </md-list>
+                        </md-content>
+                    </md-content>
+                </md-sidenav>
+
+
+                <!-- MAIN CONTENT -->
+                <md-content flex >
+                    <md-toolbar class="md-whiteframe-z2" md-theme-watch="true">
+                        <div class="md-toolbar-tools">
+                            <md-button ng-click="toggleMenu()"
+                                style="min-width: 40px; width: 40px;"
+                                aria-label="Toggle menu"
+                                hide-gt-lg>
+                                <md-icon md-svg-src="img/menu.svg"
+                                         alt="Toggle menu">
+                                </md-icon>
+                            </md-button>
+                            <h2 class="md-flex">~{{$location.$$path}}</h2>
+                        </div>
+                    </md-toolbar>
+                    <md-content layout-padding class="gridList" md-theme-watch="true">
+                        <div ng-view></div>
+                    </md-content>
+                </md-content>
+
+
+                <!-- FOOTER -->
+                <div id="footer" ng-controller="FooterCtrl" layout="row">
+                    <md-button ng-click="showGridBottomSheet($event)" class="md-fab"
+                        aria-label="Bottom sheet">
+                        more
+                    </md-button>
+                </div>
             </section>
         </div>
-    </div>
-    <script type="text/javascript" src="js/reveal.js"></script>
-    <script type="text/javascript">
-        Reveal.initialize({
+        
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-messages.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-animate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-aria.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.0/angular-material.min.js"></script>
 
-        });
-    </script>
-</body>
+        <script src="script/core/mainCtrl.js"></script>
+        <script src="script/core/menuCtrl.js"></script>
+        <script src="script/core/footerCtrl.js"></script>
+        <script src="script/core/routing.js"></script>
+        <script src="script/core/themes.js"></script>
+        <script src="script/core/default/defaultCtrl.js"></script>
+        <script src="script/core/education/educationCtrl.js"></script>
+        <script src="script/core/career/careerCtrl.js"></script>
+        <script src="script/core/projects/projectsCtrl.js"></script>
+        <script src="script/core/hobby/hobbyCtrl.js"></script>
+        <script src="script/core/contact/contactCtrl.js"></script>
+        <script src="script/core/amateur_projects/amateurProjectsCtrl.js"></script>
+    </body>
 </html>
