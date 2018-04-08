@@ -5,12 +5,6 @@ app.controller('EducationCtrl', function($scope, $routeParams) {
     $scope.schools = [
         {
             name: 'Technical University of Wrocław',
-            degree: "Master's degree",
-            department: 'Computer Science',
-            years: '2013-now'
-        },
-        {
-            name: 'Technical University of Wrocław',
             degree: "Bachelor of Engineering",
             department: 'Computer Science',
             years: '2009-2013'
