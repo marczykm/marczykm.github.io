@@ -22,11 +22,11 @@ app.controller('MenuCtrl',
             {
                 label: 'Hobby',
                 url: hash_slash+'hobby'
-            },
-            {
-                label: 'Amateur projects',
-                url: hash_slash+'amateur_projects'
-            }
+            }//,
+//            {
+//                label: 'Amateur projects',
+//                url: hash_slash+'amateur_projects'
+//            }
         ];
 
         $scope.closeMenu = function () {

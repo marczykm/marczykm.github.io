@@ -4,14 +4,33 @@ app.controller('ProjectsCtrl', function($scope, $routeParams){
 
     $scope.projects = 
     [
+	{
+	    name: 'Pożyczka Błyskawiczna (Credit Online)',
+	    company: 'eurobank',
+	    hired: {from: '11.2017', to: 'now'},
+	    description: '',
+ 	    tools:
+	    [
+		'Java 8',
+		'Spring Boot',
+		'Microservices',
+		'Hibernate',
+		'Groovy',
+		'Spock',
+		'Swagger',
+		'JUnit',
+		'Maven',
+		'GIT'
+	    ]
+	},
         {
             name: 'Kredyt ratalny Euroraty',
             company: 'eurobank',
-            hired: {from: '02.2016', to: 'now'},
+            hired: {from: '02.2016', to: '09.2017'},
             description: "",
             tools: 
             [
-                'Java',
+                'Java 7',
                 'Spring',
                 'angularJS',
                 'JSP',
