@@ -8,20 +8,6 @@ app.controller('FooterCtrl', function($scope, $timeout, $mdBottomSheet){
             tooltip: 'check me on LinkedId'
         },
         {
-            icon: 'img/icon/facebook.svg',
-            label: 'Facebook',
-            url: 'https://www.facebook.com/marczyk.marcin',
-            color: '#47639E',
-            tooltip: 'check me on Facebook'
-        },
-        {
-            icon: 'img/icon/google_plus.svg',
-            label: 'Google+',
-            url: 'https://plus.google.com/+MarcinMarczyk89',
-            color: '#D44132',
-            tooltip: 'check me on Google+'
-        },
-        {
             icon: 'img/icon/github.svg',
             label: 'GitHub',
             url: 'https://github.com/marczykm?tab=repositories',
@@ -37,8 +23,15 @@ app.controller('FooterCtrl', function($scope, $timeout, $mdBottomSheet){
         },
        {
            icon: 'img/icon/cv.svg',
-           label: 'CV',
-           url: 'docs/cv_marczyk_en_web.pdf',
+           label: 'CV EN',
+           url: 'https://docs.google.com/document/d/1ZBwZfXk3G7Yh1WNxf6S0PnlCA7hWKi4Ne4d8PgSqWKg/edit?usp=sharing',
+           color: '#FFB404',
+           tooltip: 'get my CV'
+       },
+       {
+           icon: 'img/icon/cv.svg',
+           label: 'CV PL',
+           url: 'https://docs.google.com/document/d/1wUyfOCbgq6Hx1Wn6roAbovOZRkfhvWIp__OQsuB6LlQ/edit?usp=sharing',
            color: '#FFB404',
            tooltip: 'get my CV'
        },

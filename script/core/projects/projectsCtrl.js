@@ -7,7 +7,7 @@ app.controller('ProjectsCtrl', function($scope, $routeParams){
 	{
 	    name: 'Pożyczka Błyskawiczna (Credit Online)',
 	    company: 'eurobank',
-	    hired: {from: '11.2017', to: 'now'},
+	    hired: {from: '09.2017', to: '05.2018'},
 	    description: '',
  	    tools:
 	    [
@@ -20,13 +20,14 @@ app.controller('ProjectsCtrl', function($scope, $routeParams){
 		'Swagger',
 		'JUnit',
 		'Maven',
-		'GIT'
+		'GIT',
+    'Bitbucket'
 	    ]
 	},
         {
             name: 'Kredyt ratalny Euroraty',
             company: 'eurobank',
-            hired: {from: '02.2016', to: '09.2017'},
+            hired: {from: '08.2016', to: '10.2017'},
             description: "",
             tools: 
             [
@@ -36,7 +37,7 @@ app.controller('ProjectsCtrl', function($scope, $routeParams){
                 'JSP',
                 'Hibernate',
                 'JUnit',
-                'WLS',
+                'Weblogic',
                 'Maven',
                 'GIT',
                 'JIRA'
