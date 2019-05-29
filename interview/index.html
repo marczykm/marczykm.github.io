@@ -88,7 +88,7 @@ synchronized (obj) {
    while (condition does not hold)
       obj.wait(); // (Releases lock, and reacquires on wakeup)
       ... // Perform action appropriate to condition
-}```
+}
 					</section>
 					<section data-markdown>
 						What is false sharing in the context of multi-threading? 
@@ -120,7 +120,7 @@ Please see the answer for a code example. Just remember to call wait() and notif
 					</section>
 					<section data-markdown>
 						#### Write code for thread-safe Singleton in Java? (answer)
-					Please see the answer for a code example and step by step guide to creating thread-safe singleton class in Java. When we say thread-safe, which means Singleton should remain singleton even if initialization occurs in the case of multiple threads. Using Java enum as Singleton class is one of the easiest ways to create a thread-safe singleton in Java.
+Please see the answer for a code example and step by step guide to creating thread-safe singleton class in Java. When we say thread-safe, which means Singleton should remain singleton even if initialization occurs in the case of multiple threads. Using Java enum as Singleton class is one of the easiest ways to create a thread-safe singleton in Java.
 					</section>
 					<section data-markdown>
 						#### The difference between sleep and wait in Java? (answer)
